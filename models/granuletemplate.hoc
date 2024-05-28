@@ -5,8 +5,9 @@
 //
 // Template for models of L5 Pyramidal Cell
 // Modified by Aman Aberra
+// Modified to be a granule cell by Penelope Tir
 
-begintemplate L5PCtemplate
+begintemplate granuletemplate
   public init
   public locateSites, getLongestBranch
   public soma, dend, apic, axon, spine_neck, spine_head, getAbsSecIndex
@@ -61,12 +62,12 @@ proc geom() {
 
 proc add_spines(){ local spine_ind, interv, x_pos, sec_len, neck_L, neck_diam, head_L, head_diam 
     spine_seclist_name = $s1
-    spine_ind = $2
-    interv = $3  // place spine every interv um along branch
-    neck_L = 1 // spine neck length
-    neck_diam = 0.1 // spine neck diam
-    head_L = 0.5 // spine head length 
-    head_diam = 0.5 // spine head diam
+    spine_ind = $2 
+    interv = $0.5  // place spine every interv um along branch Schmidt-Heber et al. 2007
+    neck_L = 0.75 // spine neck length, Schmidt-Heber et al. 2007
+    neck_diam = 0.18 // spine neck diam, Schmidt-Heber et al. 2007
+    head_L = 0.5 // spine head length, Schmidt-Heber et al. 2007
+    head_diam = 0.5 // spine head diam, Schmidt-Heber et al. 2007
     if (strcmp(spine_seclist_name,"apical") == 0) {
       this.apic[spine_ind] {
         sec_len = L
@@ -171,7 +172,7 @@ proc biophys() { localobj bp
 	area(0.5)
 	distance()  
 	access soma
-  bp = new L5PCbiophys()
+  bp = new granulebiophys()
   bp.biophys(this,this.spine_ind,this.spine_seclist_name)
   // if (strcmp(this.spine_seclist_name,"apical") == 0) {
   //   if (this.spine_ind >= 0) apic[this.spine_ind].cm = 1 // revert cm of branch with spines to 1 uF/cm2
@@ -356,4 +357,4 @@ func getAbsSecIndex(){ local nAbsInd, index  localobj str,strObj
 }
 
 
-endtemplate L5PCtemplate
+endtemplate granuletemplate
