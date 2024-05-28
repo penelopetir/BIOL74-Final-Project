@@ -4,9 +4,10 @@
 //    (Hay et al., PLoS Computational Biology, 2011) 
 //
 // Model of L5 Pyramidal Cell, constrained both for BAC firing and Current Step Firing
+// Edited by Penelope Tir, to make it more like a granule cell neuron
 
 
-begintemplate L5PCbiophys
+begintemplate granulebiophys
 public biophys
 strdef spine_seclist_name
 
@@ -16,8 +17,8 @@ proc biophys() { local spine_sec_ind
 	forsec $o1.all {
 		insert pas
 		cm = 1
-		Ra = 100
-		e_pas = -90
+		Ra = 194 //Schmidt-Heber et al. 2007
+		e_pas = -80 //Schmidt-Heber et al. 2007
 		insert extracellular
 	}
 
@@ -128,4 +129,4 @@ proc biophys() { local spine_sec_ind
 	}
 }
 
-endtemplate L5PCbiophys
+endtemplate granulebiophys
