@@ -11,13 +11,13 @@ morphology_file = "morphologies/cell1.asc" # morphology file
 h.load_file("models/L5PCbiophys.hoc")
 h.load_file("models/L5PCtemplate.hoc")
 
-def createL5PC(morphology_file,spine_seclist_name,spine_sec_ind,spine_interv):
+def createGranuleCell(morphology_file,spine_seclist_name,spine_sec_ind,spine_interv):
     if spine_seclist_name not in ['apical','basal']:
         raise NameError('spine_seclist_name must be ''apical'' or ''basal'', set to {}'.format(spine_seclist_name))
-    L5PC = None 
+    GC = None 
     for sec in h.allsec():
         h.delete_section(sec=sec)
-    L5PC = h.L5PCtemplate(morphology_file,spine_seclist_name,spine_sec_ind,spine_interv)
+    GC = h.GranuleTemplate(morphology_file,spine_seclist_name,spine_sec_ind,spine_interv)
     return L5PC
 
 
