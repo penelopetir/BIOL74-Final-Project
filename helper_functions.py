@@ -17,7 +17,7 @@ def createGranuleCell(morphology_file,spine_seclist_name,spine_sec_ind,spine_int
     GC = None 
     for sec in h.allsec():
         h.delete_section(sec=sec)
-    GC = h.L5PCTemplate(morphology_file,spine_seclist_name,spine_sec_ind,spine_interv)
+    GC = h.GranuleTemplate(morphology_file,spine_seclist_name,spine_sec_ind,spine_interv)
     return GC
 
 
