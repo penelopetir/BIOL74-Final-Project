@@ -23,6 +23,7 @@ proc biophys() { local spine_sec_ind
 	}
 
 	forsec $o1.somatic {
+		//commented so that it can be passive for now
 		//insert Ca
 		//gtcabar_Ca = 0.0018
 		//gncabar_Ca = 0
@@ -30,14 +31,15 @@ proc biophys() { local spine_sec_ind
 		//insert CadepK
 		//gbkbar_CadepK = 0
 		//gskbar_CadepK = 0
-		insert Na
-		gmax_Na = 0.12
-		insert fKDR
-		gmax_fKDR = 0.016
-		insert sKDR
-		gmax_sKDR = 0.003
-		ek = -85
-		ena = 45 // Aradi and Holmes
+
+		//insert Na
+		//gmax_Na = 0.12
+		//insert fKDR
+		//gmax_fKDR = 0.016
+		//insert sKDR
+		//gmax_sKDR = 0.003
+		//ek = -85
+		//ena = 45 // Aradi and Holmes
 		
   }
 
