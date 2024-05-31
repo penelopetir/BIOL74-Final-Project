@@ -42,16 +42,14 @@ proc biophys() { local spine_sec_ind
   }
 
 	forsec $o1.apical {
-		    cm = 1
-		    insert pas
-		      g_pas = 2.5e-05
-		      e_pas = -70
-		    insert Na
-		      gmax_Na = 0.018
-		    insert fKDR
-		      gmax_fKDR = 0.004
-		    insert sKDR
-		      gmax_sKDR = 0.003
+	//Aradi and Holmes, values for "proximal" dendrites 
+	//Models ~first 200 um in length, most accurate
+	    insert Na
+	      gmax_Na = 0.013
+	    insert fKDR
+	      gmax_fKDR = 0.004
+	    insert sKDR
+	      gmax_sKDR = 0.003
 	}	
 	
   forsec $o1.axonal {
