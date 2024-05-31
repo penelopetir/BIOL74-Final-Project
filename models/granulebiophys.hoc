@@ -42,12 +42,23 @@ proc biophys() { local spine_sec_ind
   }
 
 	forsec $o1.apical {
-		cm = 1		
-		g_pas = 0.0000589  // 16.9 kOhm cm2
+		    cm = 1
+		    insert pas
+		      g_pas = 2.5e-05
+		      e_pas = -70
+		    insert Na
+		      gmax_Na = 0.018
+		    insert fKDR
+		      gmax_fKDR = 0.004
+		    insert sKDR
+		      gmax_sKDR = 0.003
 	}	
 	
   forsec $o1.axonal {
-  		g_pas = 0.0000325 
+  	insert Na
+	gmax_Na = 0.21
+    	insert fKDR
+      	gmax_fKDR = 0.028
 	}
 }
 
