@@ -1,0 +1,54 @@
+// Author: Etay Hay, 2011
+//    Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of
+//    Dendritic and Perisomatic Active Properties
+//    (Hay et al., PLoS Computational Biology, 2011) 
+//
+// Model of L5 Pyramidal Cell, constrained both for BAC firing and Current Step Firing
+// Edited by Penelope Tir, to make it more like a granule cell neuron
+
+{load_file("channels.ses")}
+
+begintemplate granulebiophys
+public biophys
+
+proc biophys() { local spine_sec_ind
+	
+	forsec $o1.all {
+		insert pas
+		cm = 1
+		Ra = 210 // Aradi and Holmes
+		g_pas = 2.5e-05
+		e_pas = -70 // -70 used in Aradi and Holmes model, -93 mV used in Williams paper
+		insert extracellular
+	}
+
+	forsec $o1.somatic {
+		insert Ca
+		gtcabar_Ca = 0.0018
+		gncabar_Ca = 0
+		glcabar_Ca = 0
+		// insert CadepK
+		// gbkbar_CadepK = 0
+		// gskbar_CadepK = 0
+		insert Na
+		gmax_Na = 0.12
+		// insert fKDR
+		// gmax_fKDR = 0.016
+		// insert sKDR
+		// gmax_sKDR = 0.003
+		// ek = -85
+		ena = 45 // Aradi and Holmes
+		
+  }
+
+	forsec $o1.apical {
+		cm = 1		
+		g_pas = 0.0000589  // 16.9 kOhm cm2
+	}	
+	
+  forsec $o1.axonal {
+  		g_pas = 0.0000325 
+	}
+}
+
+endtemplate granulebiophys
