@@ -10,8 +10,9 @@ h.load_file("import3d.hoc") # loads NEURON library for importing 3D morphologies
 morphology_file = "morphologies/WT.asc" # morphology file
 h.load_file("models/granulebiophys.hoc")
 h.load_file("models/granuletemplate.hoc")
+h.load_file("models/passivebiophys.hoc")
 
-def createGranuleCell(morphology_file):    
+def createGranuleCell(morphology_file, membrane):    
     cell = None 
     for sec in h.allsec():
         h.delete_section(sec=sec)
