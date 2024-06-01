@@ -11,12 +11,16 @@ morphology_file = "morphologies/WT.asc" # morphology file
 h.load_file("models/granulebiophys.hoc")
 h.load_file("models/granuletemplate.hoc")
 h.load_file("models/passivebiophys.hoc")
+h.load_file("models/passivetemplate.hoc")
 
-def createGranuleCell(morphology_file, membrane):    
+def createGranuleCell(morphology_file, membrane = "active"):    
     cell = None 
     for sec in h.allsec():
         h.delete_section(sec=sec)
-    cell = h.granuletemplate(morphology_file)
+    if(membrane == "passive"):
+        cell = h.passivetemplate(morphology_file)
+    elif(membrane == "active"):
+        cell = h.granuletemplate(morphology_file)
     return cell
 
 
