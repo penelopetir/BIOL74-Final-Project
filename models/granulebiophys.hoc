@@ -23,13 +23,13 @@ proc biophys() { local spine_sec_ind
 	}
 
 	forsec $o1.somatic {
-		//insert Ca
-		//gtcabar_Ca = 0.0018
-		//gncabar_Ca = 0
-		//glcabar_Ca = 0
-		//insert CadepK
-		//gbkbar_CadepK = 0
-		//gskbar_CadepK = 0
+		insert Ca
+		gtcabar_Ca = 0.0018
+		gncabar_Ca = 0
+		glcabar_Ca = 0
+		insert CadepK
+		gbkbar_CadepK = 0
+		gskbar_CadepK = 0
 
 		insert Na
 		gmax_Na = 0.12
