@@ -8,7 +8,7 @@
 
 {load_file("channels.ses")}
 
-begintemplate granulebiophys
+begintemplate passivebiophys
 public biophys
 
 proc biophys() { local spine_sec_ind
@@ -62,4 +62,4 @@ proc biophys() { local spine_sec_ind
 	}
 }
 
-endtemplate granulebiophys
+endtemplate passivebiophys
