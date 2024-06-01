@@ -7,7 +7,7 @@
 // Modified by Aman Aberra
 // Modified to be a granule cell by Penelope Tir
 {load_file("channels.ses")}
-begintemplate granuletemplate
+begintemplate passivetemplate
   public init
   public locateSites, getLongestBranch
   public soma, apic, dend, axon, getAbsSecIndex
@@ -73,7 +73,7 @@ proc biophys() { localobj bp
 	area(0.5)
 	distance()  
 	access soma
-  bp = new granulebiophys()
+  bp = new passivebiophys()
   bp.biophys(this)
 
 }
@@ -264,4 +264,4 @@ func calculate_distribution()	{local value
 // }
 
 
-endtemplate granuletemplate
+endtemplate passivetemplate
