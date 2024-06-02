@@ -3,7 +3,7 @@
 
 NEURON {
 	SUFFIX Ca
-	USEION ca WRITE ica
+	USEION ca READ cai, cao WRITE ica
 	RANGE gtcabar, gncabar, glcabar, gtca, gnca, glca, e_ca
 	GLOBAL ca0, cao
 }
