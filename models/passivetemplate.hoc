@@ -84,7 +84,7 @@ proc delete_axon(){
     create axon [4]
     axon[0]{ //modeled after Aradi et al. 2007
       L= 50
-      diam = 0.3
+      diam = 1
       nseg = 1
       all.append()
       axonal.append()
