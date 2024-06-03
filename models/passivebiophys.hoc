@@ -18,7 +18,7 @@ proc biophys() { local spine_sec_ind
 		cm = 1
 		Ra = 210 // Aradi and Holmes
 		g_pas = 2.5e-05
-		e_pas = -93 // -70 used in Aradi and Holmes model, -93 mV used in Williams paper
+		e_pas = -70 // -70 used in Aradi and Holmes model, -93 mV used in Williams paper
 		insert extracellular
 	}
 
