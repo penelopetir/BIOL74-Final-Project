@@ -84,14 +84,14 @@ proc delete_axon(){
     create axon [4]
     axon[0]{
       L= 775
-      diam = 0.6
+      diam = 1
       nseg = 1+2*int(L/40)
       all.append()
       axonal.append()
     }
     axon[1]{
       L= 775
-      diam = 0.4
+      diam = 0.6
       nseg = 1+2*int(L/40)
       all.append()
       axonal.append()
