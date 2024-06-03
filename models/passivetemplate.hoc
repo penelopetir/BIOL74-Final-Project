@@ -78,33 +78,32 @@ proc biophys() { localobj bp
 
 }
 
-// deleting axon, making new four section axon
+// remaking axon
 proc delete_axon(){
     forsec axonal{delete_section()}
     create axon [4]
-    axon[0]{ //modeled after Aradi et al. 2007
-      L= 50
+    axon[0]{
+      L= 775
       diam = 1
-      nseg = 1
+      nseg = 1+2*int(L/40)
       all.append()
       axonal.append()
     }
     axon[1]{
-      L= 50
-      diam = 0.3
-      nseg = 1
+      L= 775
+      diam = 0.4
+      nseg = 1+2*int(L/40)
       all.append()
       axonal.append()
     }
   axon[2] {
-      L=50
-      diam = 0.2
-      nseg = 1
+    // set biophys
+    diam = 0.4
   }
   axon[3] {
-    diam = 0.1
-    L = 1400
-    nseg = 28
+    // set biophys
+    diam = 0.3
+    L = 1400    
   }
   nSecAxonal = 4
   connect axon(0), soma(0.5)
