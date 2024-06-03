@@ -84,7 +84,7 @@ proc delete_axon(){
     create axon [4]
     axon[0]{
       L= 775
-      diam = 1
+      diam = 0.6
       nseg = 1+2*int(L/40)
       all.append()
       axonal.append()
@@ -98,11 +98,11 @@ proc delete_axon(){
     }
   axon[2] {
     // set biophys
-    diam = 0.5
+    diam = 0.3
   }
   axon[3] {
     // set biophys
-    diam = 0.4
+    diam = 0.2
     L = 1400    
   }
   nSecAxonal = 4
