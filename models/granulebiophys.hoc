@@ -32,11 +32,11 @@ proc biophys() { local spine_sec_ind
 		// gskbar_CadepK = 0
 		insert Na
 		gmax_Na = 0.12
-		// insert fKDR
-		// gmax_fKDR = 0.016
-		// insert sKDR
-		// gmax_sKDR = 0.003
-		// ek = -85
+		insert fKDR
+		gmax_fKDR = 0.016
+		insert sKDR
+		gmax_sKDR = 0.003
+		ek = -85
 		ena = 45 // Aradi and Holmes
 		
   }
